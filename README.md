@@ -157,10 +157,17 @@ webapp/
 - 📊 Statistika və analitika
 - 💾 Məlumatların eksportu (CSV/Excel)
 
+## URLs
+- **GitHub Repository**: https://github.com/tupi1021-cmyk/khsgajs-
+- **Sandbox URL**: https://3000-iu7g5zkkgwt5usozec9l6-82b888ba.sandbox.novita.ai
+- **Health Check**: https://3000-iu7g5zkkgwt5usozec9l6-82b888ba.sandbox.novita.ai/health
+
 ## Deploy Status
-- **Platform**: Lokal/Sandbox (Render.com üçün hazır)
-- **Status**: ✅ Aktiv
+- **Platform**: Sandbox (Render.com üçün hazır)
+- **Status**: ✅ Aktiv və İşləyir
 - **Son Yeniləmə**: 2026-02-21
+- **Port**: 3000
+- **Process Manager**: PM2
 
 ## Qeydlər
 - Bu layihə yalnız dostlar qrupu üçün nəzərdə tutulub
