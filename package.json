@@ -1,0 +1,23 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["real-time", "socket.io", "express", "friendship"],
+  "author": "",
+  "license": "ISC",
+  "description": "Real-time friendship platform with location and camera access",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "socket.io": "^4.8.3"
+  }
+}

